@@ -1,0 +1,3 @@
+Coloque aqui as fotos do site (hero, Leonardo, antes/depois).
+Prefira .webp ou .jpg com até 300 KB cada.
+No index.html, use o caminho relativo, por exemplo: <img src="img/hero.webp" alt="Leonardo Feltrin">
