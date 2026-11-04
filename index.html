@@ -380,7 +380,55 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 /* telas estreitas: tira palavras da mensagem para caber em uma linha */
 @media(max-width:419px){.timer .msg .vp{display:none}}
 @media(max-width:380px){.timer .msg .ve{display:none}.timer .in{gap:6px}.timer{padding:7px 8px}.clock div{padding:2px}.timer a.mini{padding:0 8px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+/* ===== v4: persuasão ===== */
+.pcard p b,.lead b{color:var(--ink)}
+.bridge{max-width:720px;margin:36px auto 0;text-align:center;font-size:19px;font-weight:600;line-height:1.5}
+.bridge b{color:var(--teal-d)}
+.tl2{color:var(--teal-d)}
+/* para quem é */
+.fit{margin-top:56px;background:var(--ink);color:#fff;border-radius:22px;padding:30px 32px;border-left:5px solid var(--gold)}
+.fit h3{font-size:24px;margin-bottom:12px;color:var(--gold-l)}
+.fit ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 30px;margin:0}
+.fit li{padding:6px 0 6px 30px;position:relative;font-size:17px;line-height:1.4}
+.fit li::before{content:"✓";position:absolute;left:0;top:6px;width:auto;height:auto;border:0;transform:none;color:var(--gold);font-weight:800}
+/* empilhamento de valor (Ouro) */
+.mods .lead b,.final .lead b{color:#fff}
+.stack{background:radial-gradient(80% 60% at 50% 0%,rgba(201,150,43,.22),transparent 70%),#07131C;color:#fff;border-top:1px solid rgba(201,150,43,.5)}
+.stack .lead{color:#B3C7D4}.stack .lead b{color:#fff}
+.sbox{max-width:760px;margin:40px auto 0;border-radius:24px;padding:30px 30px 26px;background:linear-gradient(180deg,rgba(201,150,43,.16),rgba(255,255,255,.03));border:2px solid var(--gold);box-shadow:0 30px 80px rgba(201,150,43,.22)}
+.shead{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-l);padding-bottom:10px;border-bottom:1px solid rgba(241,223,168,.35)}
+.slist{list-style:none}
+.slist li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.slist li>div{min-width:0}
+.slist b{display:block;font-size:17.5px;line-height:1.3}
+.slist span{display:block;color:#B3C7D4;font-size:15.5px;line-height:1.4;margin-top:3px}
+.slist em{flex:0 0 auto;font-style:normal;font-weight:700;font-family:var(--fh);font-size:19px;color:var(--gold-l);font-variant-numeric:tabular-nums;white-space:nowrap}
+.slist li.sb b::before{content:"★ ";color:var(--gold)}
+.stot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 4px;font-size:18px;color:#D6E2EA}
+.stot s{font-family:var(--fh);font-weight:700;font-size:22px;color:#D6E2EA;font-variant-numeric:tabular-nums;white-space:nowrap;text-decoration-color:#E5484D;text-decoration-thickness:3px}
+.snow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 20px;margin:16px 0 22px;padding:20px 22px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(241,223,168,.4)}
+.snow small{display:block;font-size:15px;color:var(--gold-l);font-weight:700}
+.snow strong{display:block;font-family:var(--fh);font-size:46px;line-height:1.05;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.snow>div>span{font-size:14.5px;color:#B3C7D4}
+.ssave{background:var(--gold);color:var(--ink);font-weight:800;font-size:15.5px;padding:8px 16px;border-radius:99px;white-space:nowrap}
+.snote{text-align:center;font-size:13.5px;color:#9FB6C4;margin-top:14px}
+.fsub{margin-top:16px;font-size:15px;color:#9FB6C4}
+/* animação: só quando o JS marca .rv (sem JS tudo aparece e o total já vem riscado) */
+.sbox.rv .slist li{opacity:0;transform:translateX(-14px);transition:opacity .5s,transform .5s}
+.sbox.rv.on .slist li{opacity:1;transform:none}
+.sbox.rv.on .slist li:nth-child(2){transition-delay:.15s}.sbox.rv.on .slist li:nth-child(3){transition-delay:.3s}.sbox.rv.on .slist li:nth-child(4){transition-delay:.45s}
+.sbox.rv .stot s{text-decoration:none;position:relative}
+.sbox.rv .stot s::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;height:3px;margin-top:-1px;background:#E5484D;border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .6s .8s}
+.sbox.rv.on .stot s::after{transform:scaleX(1)}
+@media(max-width:860px){
+  .fit{padding:24px 20px;margin-top:40px}.fit ul{grid-template-columns:1fr}
+  .sbox{padding:22px 16px 20px}
+  .slist b{font-size:16.5px}.slist span{font-size:15px}.slist em{font-size:17px}
+  .snow{padding:16px}.snow strong{font-size:40px}
+  .sbox .btn,.final .btn{padding:18px 14px;font-size:17px}
+  .guar .seal{flex:0 0 auto;width:104px;height:104px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.sbox.rv .slist li{opacity:1;transform:none}.sbox.rv .stot s::after{transform:scaleX(1)}}
 </style>
 </head>
 <body>
@@ -423,7 +471,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   <div class="wrap grid">
     <div>
       <h1>Alivie suas dores, perca gordura e ganhe massa em casa, <span>guiado por um fisioterapeuta.</span></h1>
-      <p class="sub">Videoaulas passo a passo com o fisioterapeuta Leonardo Feltrin. Sem academia, no seu ritmo.</p>
+      <p class="sub">Videoaulas passo a passo com o fisioterapeuta Leonardo Feltrin para você <b>treinar com segurança, se mover melhor e transformar seu corpo</b> em casa, no seu ritmo.</p>
       <ul class="bens">
         <li>Exercícios para aliviar dores</li>
         <li>Treinos em casa, sem academia</li>
@@ -454,14 +502,15 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 <section class="pain" id="metodo">
   <div class="wrap">
     <div class="center">
-      <h2>Já tentou de tudo e o corpo não responde?</h2>
-      <p class="lead">O protocolo ataca os três motivos de uma vez.</p>
+      <h2>Você se esforça, mas o corpo não responde?</h2>
+      <p class="lead">Não é falta de força de vontade. Quase sempre, é um destes três motivos.</p>
     </div>
     <div class="pgrid">
-      <div class="pcard"><h3>Falta de método</h3><p>Aqui você segue um protocolo por nível.</p></div>
-      <div class="pcard"><h3>Dores que travam</h3><p>Aprenda a aliviar e a se mover melhor.</p></div>
-      <div class="pcard"><h3>Sem tempo, sem academia</h3><p>Tudo em casa, com cada exercício explicado.</p></div>
+      <div class="pcard"><h3>Treino sem direção</h3><p>Vídeos soltos, sem sequência nem progressão. Você cansa, não vê evolução e <b>desiste mais uma vez</b>.</p></div>
+      <div class="pcard"><h3>A dor que faz parar</h3><p>A coluna ou o joelho reclamam e o medo de piorar vence. O treino fica para "quando melhorar".</p></div>
+      <div class="pcard"><h3>Sem tempo, sem academia</h3><p>Mensalidade, trânsito, horário. Quando a rotina aperta, <b>o treino é o primeiro a sair</b>.</p></div>
     </div>
+    <p class="bridge">O Protocolo Corpo Novo resolve os três: <b>método por nível, cuidado com as dores e treino em casa</b>, guiado por um fisioterapeuta.</p>
   </div>
 </section>
 
@@ -472,12 +521,24 @@ td.g.hl,th.g.hl{background:#F6E7B8}
       <span>Foto do Leonardo<br>(quadrada)</span>
     </div>
     <div>
-      <h2>Quem vai guiar você</h2>
-      <p class="lead">Leonardo Feltrin, fisioterapeuta especialista em emagrecimento e alta performance.</p>
+      <h2>Por que funciona: <span class="tl2">um fisioterapeuta guiando você</span></h2>
+      <p class="lead"><b>Leonardo Feltrin</b> é fisioterapeuta especialista em emagrecimento e alta performance, com atendimento presencial em Passo Fundo/RS.</p>
       <ul>
-        <li>Atendimento presencial em Passo Fundo/RS</li>
-        <li>Explica, demonstra e corrige cada movimento</li>
-        <li>Linguagem simples, sem complicação</li>
+        <li><b>Critério técnico</b> em cada exercício, nada de treino aleatório</li>
+        <li><b>Explica, demonstra e corrige</b> cada movimento</li>
+        <li><b>Respeita seu corpo:</b> você começa no seu nível e evolui com segurança</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="fit">
+      <h3>É para você se...</h3>
+      <ul>
+        <li>quer perder gordura e ganhar massa sem sair de casa</li>
+        <li>sente dores que atrapalham o treino ou o dia a dia</li>
+        <li>já começou várias vezes e parou no meio</li>
+        <li>é iniciante e tem medo de se machucar</li>
+        <li>quer um passo a passo claro e seguro</li>
       </ul>
     </div>
   </div>
@@ -487,7 +548,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   <div class="wrap">
     <div class="center">
       <h2>3 pacotes. <span class="gt">Só o Ouro reúne tudo.</span></h2>
-      <p class="lead">Cada pacote inclui o anterior e soma um passo.</p>
+      <p class="lead">Cada pacote inclui o anterior e soma um passo. <b>Só o Ouro cuida das suas dores.</b></p>
     </div>
     <div class="mgrid tiers">
 
@@ -496,7 +557,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
         <h3>Treine com método</h3>
         <p class="tfor">Emagrecer e ganhar massa em casa.</p>
         <ul class="tl">
-          <li class="new"><b>Módulo Emagrecimento, Ganho de Massa e Alta Performance</b>Do iniciante ao avançado</li>
+          <li class="new"><b>Módulo Emagrecimento, Ganho de Massa e Alta Performance</b>Queime gordura, ganhe força e disposição</li>
         </ul>
         <div class="lvls"><span><b>1</b>Iniciante</span><span><b>2</b>Intermediário</span><span><b>3</b>Avançado</span></div>
         <a class="btn block ghost" href="#planos" data-cta="tier-bronze">Ver o Bronze</a>
@@ -505,10 +566,10 @@ td.g.hl,th.g.hl{background:#F6E7B8}
       <div class="mod tier">
         <small>Pacote Prata</small>
         <h3>Treino + foco no abdômen</h3>
-        <p class="tfor">Bronze + método para a barriga.</p>
+        <p class="tfor">Bronze + método para firmar o abdômen.</p>
         <ul class="tl">
           <li class="inc"><b>Tudo do Pacote Bronze</b>Treino em 3 níveis</li>
-          <li class="new"><b>Método Barriga Negativa (LPF)</b>Abdômen com técnica e postura</li>
+          <li class="new"><b>Método Barriga Negativa (LPF)</b>Abdômen mais firme e postura melhor, com técnica de fisioterapeuta</li>
         </ul>
         <a class="btn block ghost" href="#planos" data-cta="tier-prata">Ver o Prata</a>
       </div>
@@ -520,8 +581,8 @@ td.g.hl,th.g.hl{background:#F6E7B8}
         <p class="tfor">Prata + alívio de dores + comunidade.</p>
         <ul class="tl">
           <li class="inc"><b>Tudo do Pacote Prata</b>Treino em 3 níveis + Barriga Negativa</li>
-          <li class="new"><b>Módulo Alívio de Dores em Casa</b>Coluna, quadril, joelho, tornozelo e mais</li>
-          <li class="new bns"><b>Bônus: Comunidade exclusiva</b>Tire dúvidas e compartilhe resultados</li>
+          <li class="new"><b>Módulo Alívio de Dores em Casa</b>Coluna, quadril, joelho, tornozelo e mais: mova-se melhor e treine com confiança</li>
+          <li class="new bns"><b>Bônus: Comunidade exclusiva</b>Tire dúvidas, troque experiências e não perca a motivação</li>
         </ul>
         <a class="btn block" href="#planos-ouro" data-cta="tier-ouro">Quero o Pacote Ouro completo</a>
         <p class="tnote">O único com alívio de dores e comunidade</p>
@@ -711,11 +772,37 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   </div>
 </section>
 
+<!-- empilhamento de valor do Pacote Ouro. Valores de referência definidos pelo cliente; o total e a economia são conferidos à mão (137,99 + 99,90 + 249,99 + 79,90 = 567,78; 567,78 − 97,90 = 469,88) -->
+<section class="stack" id="valor">
+  <div class="wrap">
+    <div class="center">
+      <h2>Tudo o que você recebe no <span class="gt">Pacote Ouro</span></h2>
+      <p class="lead">Treino, abdômen, dores e comunidade em um só acesso.</p>
+    </div>
+    <div class="sbox">
+      <div class="shead"><span>O que está incluído</span><span>Valor de referência</span></div>
+      <ul class="slist">
+        <li><div><b>Módulo Emagrecimento, Ganho de Massa e Alta Performance</b><span>Iniciante, intermediário e avançado, para evoluir em casa</span></div><em>R$ 137,99</em></li>
+        <li><div><b>Método Barriga Negativa (LPF)</b><span>Abdômen mais firme e postura melhor</span></div><em>R$ 99,90</em></li>
+        <li><div><b>Módulo Alívio de Dores em Casa</b><span>Mova-se melhor e treine com confiança</span></div><em>R$ 249,99</em></li>
+        <li class="sb"><div><b>Bônus: Comunidade exclusiva do Ouro</b><span>Dúvidas, troca e motivação para seguir</span></div><em>R$ 79,90</em></li>
+      </ul>
+      <div class="stot"><span>Valor total</span><s>R$ 567,78</s></div>
+      <div class="snow">
+        <div><small>Hoje, no Pacote Ouro</small><strong>R$ 97,90</strong><span>pagamento único<span class="ofr"> · Oferta de lançamento até 20/11</span></span></div>
+        <span class="ssave">Você economiza R$ 469,88</span>
+      </div>
+      <a class="btn block" href="CHECKOUT_OURO" data-cta="stack-ouro">Quero tudo isso por R$&nbsp;97,90</a>
+      <p class="snote">Valores de referência de cada conteúdo. Garantia de 7 dias.</p>
+    </div>
+  </div>
+</section>
+
 <section class="pricing" id="planos">
   <div class="wrap">
     <div class="center">
       <h2>Escolha seu pacote</h2>
-      <p class="lead">Pagamento único e acesso imediato.</p>
+      <p class="lead">Pagamento único e acesso imediato.<span class="ofr"> Ouro com preço de lançamento até 20/11.</span></p>
     </div>
     <div class="plans">
 
@@ -793,8 +880,8 @@ td.g.hl,th.g.hl{background:#F6E7B8}
     <div class="box">
       <div class="seal"><b>7</b><span>dias</span></div>
       <div>
-        <h2 style="font-size:28px">Garantia de 7 dias</h2>
-        <p class="lead" style="max-width:none">Não gostou? Peça o reembolso em até 7 dias após a compra.</p>
+        <h2 style="font-size:28px">Risco zero: 7 dias de garantia</h2>
+        <p class="lead" style="max-width:none">Entre, assista às aulas e treine. Se não for para você, peça o reembolso em até 7 dias e <b>devolvemos 100% do valor pago</b>.</p>
       </div>
     </div>
   </div>
@@ -805,24 +892,25 @@ td.g.hl,th.g.hl{background:#F6E7B8}
     <div class="center"><h2>Dúvidas frequentes</h2></div>
     <div class="faqbox">
       <details><summary>Preciso ir à academia ou ter equipamentos?</summary><p>Não. É tudo em casa, e o Leonardo mostra como adaptar com o que você tem.</p></details>
-      <details><summary>Sou iniciante. Consigo acompanhar?</summary><p>Sim. Há treinos para iniciante, intermediário e avançado. Você avança no seu tempo.</p></details>
+      <details><summary>Sou iniciante. Consigo acompanhar?</summary><p>Sim. Você começa no nível iniciante, com cada movimento explicado, e avança no seu tempo.</p></details>
       <details><summary>Como recebo o acesso depois da compra?</summary><p>Por e-mail, logo após a confirmação do pagamento.</p></details>
       <details><summary>Qual a diferença entre Bronze, Prata e Ouro?</summary><p>Bronze: treino em 3 níveis. Prata: + Barriga Negativa (LPF). Ouro: + Alívio de Dores e comunidade.</p></details>
       <details><summary>O módulo de alívio de dores substitui consulta médica?</summary><p>Não. É conteúdo educativo. Com lesão, dor intensa ou condição de saúde, fale com seu médico antes de começar.</p></details>
-      <details><summary>Como funciona a comunidade do Pacote Ouro?</summary><p>Um espaço só para alunos Ouro: tire dúvidas e compartilhe sua evolução.</p></details>
+      <details><summary>Como funciona a comunidade do Pacote Ouro?</summary><p>Um espaço só para alunos Ouro: tire dúvidas, compartilhe sua evolução e mantenha a motivação.</p></details>
       <details><summary>Por quanto tempo tenho acesso?</summary><p>[CONFIRMAR: informe aqui o prazo de acesso, por exemplo "acesso vitalício" ou "12 meses".]</p></details>
       <details><summary>Quais as formas de pagamento?</summary><p>[CONFIRMAR: informe as formas aceitas no checkout, como Pix, cartão e parcelamento.]</p></details>
-      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia para pedir o reembolso.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Peça o reembolso em até 7 dias e receba o valor integral. O risco é todo nosso.</p></details>
     </div>
   </div>
 </section>
 
 <section class="final">
   <div class="wrap">
-    <span class="urg" id="urg">Preço de lançamento por tempo limitado</span>
-    <h2>Comece hoje o seu Corpo Novo</h2>
-    <p class="lead">Tudo no Pacote Ouro, por R$ 97,90 no lançamento.</p>
-    <a class="btn" href="CHECKOUT_OURO" data-cta="final-ouro">Quero o Pacote Ouro</a>
+    <span class="urg" id="urg">Preço de lançamento só até 20/11</span>
+    <h2>Seu corpo novo começa <span class="gt">no primeiro treino</span></h2>
+    <p class="lead">Imagine acordar com mais disposição, se mover com leveza e se reconhecer no espelho. Tudo isso no Pacote Ouro por <b>R$&nbsp;97,90</b><span class="ofr">, só até 20/11. Depois, volta para R$&nbsp;149,90</span>.</p>
+    <a class="btn" href="CHECKOUT_OURO" data-cta="final-ouro">Quero começar hoje com o Ouro</a>
+    <p class="fsub">Pagamento único · Acesso imediato · 7 dias de garantia</p>
     <p style="margin-top:20px;font-size:15.5px"><a href="#planos" style="color:#C6D6E0">Ver todos os pacotes</a></p>
   </div>
 </section>
@@ -858,7 +946,7 @@ var FIM_OFERTA = "2026-11-20T23:59:59-03:00";
   }
   if(tick()){ var iv = setInterval(function(){ if(!tick()) clearInterval(iv); },1000); }
 
-  var els = document.querySelectorAll('.pcard,.mod,.step,.plan,.tbl,.guar .box,.auth .grid>*,details,section .center,.final .wrap,.vid,.ba');
+  var els = document.querySelectorAll('.pcard,.mod,.step,.plan,.tbl,.guar .box,.auth .grid>*,.fit,.sbox,details,section .center,.final .wrap,.vid,.ba');
   els.forEach(function(e,i){ e.classList.add('rv'); e.style.transitionDelay = (i%3)*90+'ms'; });
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } }); },{threshold:.12});
@@ -1010,7 +1098,7 @@ var FIM_OFERTA = "2026-11-20T23:59:59-03:00";
   });
 
   /* oferta encerrada: ajusta textos que citam o preço de lançamento */
-  if(!$('#timer') || $('#timer').style.display==='none'){ var u=$('#urg'); if(u) u.style.display='none'; }
+  if(!$('#timer') || $('#timer').style.display==='none'){ var u=$('#urg'); if(u) u.style.display='none'; $$('.ofr').forEach(function(x){x.style.display='none'}); }
 })();
 </script>
 
