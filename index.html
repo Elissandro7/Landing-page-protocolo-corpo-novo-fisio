@@ -203,11 +203,26 @@ footer p{max-width:760px;margin:0 auto 10px}
 .bview{overflow:hidden;border-radius:26px;background:var(--ink);box-shadow:0 30px 70px rgba(10,28,41,.25)}
 .btrack{display:flex;transition:transform .7s cubic-bezier(.65,0,.25,1)}
 .bslide{flex:0 0 100%;padding:22px 22px 0}
-.bpair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.bimg{position:relative;aspect-ratio:3/4;border-radius:16px;background:linear-gradient(180deg,#2C5C74,#10293A);overflow:hidden;display:flex;align-items:center;justify-content:center;color:#A3BCCB;font-size:14px;text-align:center;padding:12px}
-.bimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.bimg b{position:absolute;top:12px;left:12px;z-index:2;background:rgba(10,28,41,.85);color:#fff;font-size:12.5px;letter-spacing:.08em;padding:5px 12px;border-radius:99px}
-.bimg.dep b{background:var(--gold);color:var(--ink)}
+.bslide{min-width:0}
+/* comparador antes e depois: DEPOIS ao fundo, ANTES por cima recortado até a linha (--pos, de 0 a 100%) */
+.cmp{--pos:50%;position:relative;aspect-ratio:4/5;max-width:min(520px,calc((100vh - 250px)*.8));margin:0 auto;border-radius:16px;overflow:hidden;background:var(--ink2);touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;cursor:ew-resize}
+.cl{position:absolute;inset:0;color:#D6E2EA;font-size:15px}
+.cl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.cl span{position:absolute;top:50%;width:50%;transform:translateY(-50%);text-align:center;padding:0 10px}
+.cl.dep{background:linear-gradient(160deg,#B8892A,#5E4510 50%,#1E2A2F)}
+.cl.dep span{right:0}
+.cl.ant{background:linear-gradient(160deg,#3A5A6C,var(--ink2) 55%,var(--ink));clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cl.ant span{left:0}
+.ctag{position:absolute;top:12px;z-index:3;font-size:12.5px;letter-spacing:.08em;padding:5px 12px;border-radius:99px;pointer-events:none}
+.ctag.a{left:12px;background:rgba(10,28,41,.85);color:#fff}
+.ctag.d{right:12px;background:var(--gold);color:var(--ink)}
+.cline{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:#fff;z-index:2;box-shadow:0 0 12px rgba(0,0,0,.4);pointer-events:none}
+.cknob{position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:8px;font-size:24px;font-weight:700;line-height:1;box-shadow:0 6px 18px rgba(0,0,0,.4);pointer-events:auto;cursor:ew-resize;transition:transform .2s}
+.cknob::before{content:"‹"}.cknob::after{content:"›"}
+.cmp.drag .cknob,.cknob:hover{transform:scale(1.1)}
+.cknob:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.chint{text-align:center;color:#9FB6C4;font-size:15px;padding:12px 4px 0}
+.chint::before{content:"↔ ";color:var(--gold-l);font-weight:700}
 .bcap{color:#E6EEF3;padding:16px 4px 22px;text-align:center;font-size:16.5px}
 .bcap b{color:var(--gold-l)}
 .bnav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
@@ -217,15 +232,16 @@ footer p{max-width:760px;margin:0 auto 10px}
 .dots i{width:10px;height:10px;border-radius:99px;background:#CFCAB9;cursor:pointer;transition:width .3s,background .3s}
 .dots i.on{width:30px;background:var(--gold)}
 .pnote{text-align:center;font-size:13.5px;color:var(--mute);margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto}
-@media(max-width:860px){.vgrid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}.bslide{padding:12px 12px 0}.bpair{gap:8px}}
+@media(max-width:860px){.vgrid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}.bslide{padding:12px 12px 0}}
 
 @media(max-width:860px){
   section{padding:64px 0}
   .hero{padding:52px 0 70px}
   .hero .grid,.auth .grid{grid-template-columns:1fr}
-  .heroimg{aspect-ratio:16/11;order:-1}
+  .heroimg{aspect-ratio:16/11}
   .pgrid,.mgrid,.steps,.plans{grid-template-columns:1fr}
   .plan.gold{transform:none;order:-1}.plan.gold:hover{transform:none}
+  .plan.bronze{order:1} /* celular: Ouro, Prata, Bronze */
   .guar .box{flex-direction:column;text-align:center}
   .authimg{box-shadow:10px 10px 0 var(--gold-l)}
   .sticky{display:block}
@@ -315,7 +331,7 @@ body{overflow-wrap:break-word}
 .tier.gold .ribbon{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--gold-d),var(--gold),#E8C25A);color:var(--ink);font-weight:700;font-size:13.5px;padding:7px 16px;border-radius:99px;white-space:nowrap}
 .tier .btn{margin-top:auto}
 .tnote{margin-top:12px;text-align:center;font-size:14px;color:var(--gold-l)}
-@media(max-width:860px){.tier.gold{transform:none;order:-1}.tier.gold:hover{transform:none}}
+@media(max-width:860px){.tier.gold{transform:none;order:-1}.tier.gold:hover{transform:none}.tier.bronze{order:1}} /* celular: Ouro, Prata, Bronze */
 /* tabela: realce de coluna */
 td.hl,th.hl{background:#F3F1EA}
 td.g.hl,th.g.hl{background:#F6E7B8}
@@ -338,7 +354,29 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   .stat b{font-size:34px}
   .qbox{padding:26px 18px}.qstep h3{font-size:22px}
   .totop{bottom:84px}
+  /* nav: logo e botão em uma linha */
+  .logo{white-space:nowrap;font-size:18px;gap:8px}.logo i{width:26px;height:26px}.logo i::after{inset:7px}
+  .nav{gap:12px}
+  .nav .navcta{white-space:nowrap;font-size:14px;padding:0 14px;min-height:44px;display:inline-flex;align-items:center}
 }
+/* texto em duas versões: .vl longa (desktop), .vc curta (celular) */
+.vc{display:none}
+@media(max-width:860px){
+  .vl{display:none}.vc{display:inline}
+  /* cronômetro compacto: uma linha só */
+  .timer{padding:7px 10px}
+  .timer .in{flex-wrap:nowrap;gap:8px;justify-content:space-between}
+  .timer .msg{font-size:13.5px;white-space:nowrap;line-height:1.2}
+  .clock{gap:2px}
+  .clock div{min-width:0;padding:2px 3px;border-radius:6px;display:flex;align-items:baseline}
+  .clock strong{display:inline;font-size:16px}
+  .clock small{font-size:0}.clock small::after{content:attr(data-a);font-size:10px;margin-left:1px}
+  .clock i{display:none}
+  .timer a.mini{font-size:12.5px;padding:0 10px;white-space:nowrap;min-height:34px;display:inline-flex;align-items:center}
+}
+/* telas estreitas: tira palavras da mensagem para caber em uma linha */
+@media(max-width:419px){.timer .msg .vp{display:none}}
+@media(max-width:380px){.timer .msg .ve{display:none}.timer .in{gap:6px}.timer{padding:7px 8px}.clock div{padding:2px}.timer a.mini{padding:0 8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -353,12 +391,12 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 
 <div class="timer" id="timer">
   <div class="in">
-    <span class="msg">🔥 <b>Preço de lançamento:</b> Ouro completo por <b>R$ 97,90</b> em vez de R$ 149,90. Encerra em</span>
+    <span class="msg"><span class="vl">🔥 <b>Preço de lançamento:</b> Ouro completo por <b>R$ 97,90</b> em vez de R$ 149,90. Encerra em</span><span class="vc"><span class="ve">🔥 </span>Ouro <span class="vp">por </span><b>R$ 97,90</b></span></span>
     <div class="clock" aria-live="off">
-      <div><strong id="t-d">00</strong><small>dias</small></div><i>:</i>
-      <div><strong id="t-h">00</strong><small>horas</small></div><i>:</i>
-      <div><strong id="t-m">00</strong><small>min</small></div><i>:</i>
-      <div><strong id="t-s">00</strong><small>seg</small></div>
+      <div><strong id="t-d">00</strong><small data-a="d">dias</small></div><i>:</i>
+      <div><strong id="t-h">00</strong><small data-a="h">horas</small></div><i>:</i>
+      <div><strong id="t-m">00</strong><small data-a="m">min</small></div><i>:</i>
+      <div><strong id="t-s">00</strong><small data-a="s">seg</small></div>
     </div>
     <a class="mini" href="#planos-ouro">Garantir o Ouro</a>
   </div>
@@ -376,7 +414,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
         <li><a href="#planos">Pacotes</a></li>
         <li><a href="#duvidas">Dúvidas</a></li>
       </ul>
-      <a class="navcta" href="#quiz">Qual pacote é o meu?</a>
+      <a class="navcta" href="#quiz"><span class="vl">Qual pacote é o meu?</span><span class="vc">Fazer o teste</span></a>
     </nav>
   </div>
   <div class="wrap grid">
@@ -448,7 +486,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
     </div>
     <div class="mgrid tiers">
 
-      <div class="mod tier">
+      <div class="mod tier bronze">
         <small>Pacote Bronze</small>
         <h3>Para começar a treinar com método</h3>
         <p class="tfor">Você quer emagrecer, ganhar massa e melhorar o desempenho treinando em casa.</p>
@@ -506,8 +544,15 @@ td.g.hl,th.g.hl{background:#F6E7B8}
      Vimeo:   https://player.vimeo.com/video/CODIGO
      Arquivo: https://SEU-SITE/depoimento1.mp4
   Troque também o nome e a frase da legenda (vcap).
-  ANTES/DEPOIS: em cada <div class="bimg">, descomente/adicione <img src="URL_DA_FOTO" alt="Antes"> e ajuste a legenda (bcap).
-  Para mais slides, copie um bloco <div class="bslide"> inteiro. Use só fotos e relatos reais, com autorização por escrito dos alunos.
+  ANTES/DEPOIS (comparador com linha de arrastar): cada <div class="bslide"> tem um quadro <div class="cmp">
+  com duas camadas: <div class="cl dep"> (foto DEPOIS, ao fundo) e <div class="cl ant"> (foto ANTES, por cima,
+  recortada até a linha). Para colocar as fotos:
+     1) salve as imagens em img/ (ex.: img/antes-1.webp e img/depois-1.webp), de preferência na proporção 4:5
+        e com o corpo na mesma posição e enquadramento nas duas, para a comparação ficar alinhada;
+     2) em cada camada, descomente a linha <img src="img/..." alt="..."> e apague o <span>Foto antes/depois</span>.
+  Ajuste a legenda (bcap) com nome, tempo de treino e relato curto. A linha começa no meio (--pos:50%).
+  Para mais slides, copie um bloco <div class="bslide"> inteiro (os pontinhos são criados sozinhos).
+  Use só fotos e relatos reais, com autorização por escrito dos alunos.
 -->
 <section class="proof" id="depoimentos">
   <div class="wrap">
@@ -540,25 +585,73 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 
     <div class="ba" id="ba">
       <h3>Antes e depois dos alunos</h3>
-      <p>Passe pelos resultados ou deixe rodar sozinho.</p>
+      <p>Arraste a linha em cada foto e passe para o próximo resultado.</p>
       <div class="bview">
         <div class="btrack">
-          <div class="bslide"><div class="bpair">
-            <div class="bimg"><b>ANTES</b><!-- <img src="URL" alt="Antes"> -->Foto antes</div>
-            <div class="bimg dep"><b>DEPOIS</b><!-- <img src="URL" alt="Depois"> -->Foto depois</div>
-          </div><div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div></div>
-          <div class="bslide"><div class="bpair">
-            <div class="bimg"><b>ANTES</b>Foto antes</div>
-            <div class="bimg dep"><b>DEPOIS</b>Foto depois</div>
-          </div><div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div></div>
-          <div class="bslide"><div class="bpair">
-            <div class="bimg"><b>ANTES</b>Foto antes</div>
-            <div class="bimg dep"><b>DEPOIS</b>Foto depois</div>
-          </div><div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div></div>
-          <div class="bslide"><div class="bpair">
-            <div class="bimg"><b>ANTES</b>Foto antes</div>
-            <div class="bimg dep"><b>DEPOIS</b>Foto depois</div>
-          </div><div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div></div>
+          <div class="bslide">
+            <div class="cmp">
+              <div class="cl dep">
+                <!-- FOTO DEPOIS 1: <img src="img/depois-1.webp" alt="Depois: Nome do aluno(a), após X semanas"> -->
+                <span>Foto depois</span>
+              </div>
+              <div class="cl ant">
+                <!-- FOTO ANTES 1: <img src="img/antes-1.webp" alt="Antes: Nome do aluno(a)"> -->
+                <span>Foto antes</span>
+              </div>
+              <b class="ctag a">ANTES</b><b class="ctag d">DEPOIS</b>
+              <div class="cline"><span class="cknob" role="slider" tabindex="0" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% antes, 50% depois"></span></div>
+            </div>
+            <p class="chint">Arraste a linha para ver o antes e o depois</p>
+            <div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div>
+          </div>
+          <div class="bslide">
+            <div class="cmp">
+              <div class="cl dep">
+                <!-- FOTO DEPOIS 2: <img src="img/depois-2.webp" alt="Depois: Nome do aluno(a), após X semanas"> -->
+                <span>Foto depois</span>
+              </div>
+              <div class="cl ant">
+                <!-- FOTO ANTES 2: <img src="img/antes-2.webp" alt="Antes: Nome do aluno(a)"> -->
+                <span>Foto antes</span>
+              </div>
+              <b class="ctag a">ANTES</b><b class="ctag d">DEPOIS</b>
+              <div class="cline"><span class="cknob" role="slider" tabindex="0" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% antes, 50% depois"></span></div>
+            </div>
+            <p class="chint">Arraste a linha para ver o antes e o depois</p>
+            <div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div>
+          </div>
+          <div class="bslide">
+            <div class="cmp">
+              <div class="cl dep">
+                <!-- FOTO DEPOIS 3: <img src="img/depois-3.webp" alt="Depois: Nome do aluno(a), após X semanas"> -->
+                <span>Foto depois</span>
+              </div>
+              <div class="cl ant">
+                <!-- FOTO ANTES 3: <img src="img/antes-3.webp" alt="Antes: Nome do aluno(a)"> -->
+                <span>Foto antes</span>
+              </div>
+              <b class="ctag a">ANTES</b><b class="ctag d">DEPOIS</b>
+              <div class="cline"><span class="cknob" role="slider" tabindex="0" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% antes, 50% depois"></span></div>
+            </div>
+            <p class="chint">Arraste a linha para ver o antes e o depois</p>
+            <div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div>
+          </div>
+          <div class="bslide">
+            <div class="cmp">
+              <div class="cl dep">
+                <!-- FOTO DEPOIS 4: <img src="img/depois-4.webp" alt="Depois: Nome do aluno(a), após X semanas"> -->
+                <span>Foto depois</span>
+              </div>
+              <div class="cl ant">
+                <!-- FOTO ANTES 4: <img src="img/antes-4.webp" alt="Antes: Nome do aluno(a)"> -->
+                <span>Foto antes</span>
+              </div>
+              <b class="ctag a">ANTES</b><b class="ctag d">DEPOIS</b>
+              <div class="cline"><span class="cknob" role="slider" tabindex="0" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% antes, 50% depois"></span></div>
+            </div>
+            <p class="chint">Arraste a linha para ver o antes e o depois</p>
+            <div class="bcap"><b>Nome</b> · X semanas de treino · relato curto</div>
+          </div>
         </div>
       </div>
       <div class="bnav">
@@ -621,7 +714,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
     </div>
     <div class="plans">
 
-      <div class="plan">
+      <div class="plan bronze">
         <h3>Pacote Bronze</h3>
         <p class="for">Para quem quer começar a treinar em casa com método.</p>
         <div class="price"><small>R$</small>34,90</div>
@@ -792,6 +885,41 @@ var FIM_OFERTA = "2026-11-20T23:59:59-03:00";
   box.addEventListener('mouseenter',function(){clearInterval(timer)}); box.addEventListener('mouseleave',restart);
   var sx=null; tr.addEventListener('touchstart',function(e){sx=e.touches[0].clientX; clearInterval(timer)},{passive:true});
   tr.addEventListener('touchend',function(e){ if(sx!==null){ var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) go(i+(dx<0?1:-1),true); else restart(); } sx=null; });
+  /* teclado: pausa enquanto o foco está no carrossel */
+  box.addEventListener('focusin',function(){clearInterval(timer)});
+  box.addEventListener('focusout',function(e){ if(!box.contains(e.relatedTarget)) restart(); });
+
+  /* comparador antes e depois: arrastar a linha com mouse, dedo ou teclado */
+  var view=box.querySelector('.bview');
+  [].forEach.call(box.querySelectorAll('.cmp'),function(c){
+    var k=c.querySelector('.cknob'), slide=c.closest('.bslide'), drag=false;
+    function set(p){
+      p=Math.max(0,Math.min(100,p)); var r=Math.round(p);
+      c.style.setProperty('--pos',p.toFixed(1)+'%');
+      k.setAttribute('aria-valuenow',r); k.setAttribute('aria-valuetext',r+'% antes, '+(100-r)+'% depois');
+    }
+    function at(e){ var b=c.getBoundingClientRect(); if(b.width) set((e.clientX-b.left)/b.width*100); }
+    c.addEventListener('pointerdown',function(e){
+      if(e.button>0) return;
+      drag=true; c.classList.add('drag'); clearInterval(timer);
+      try{ c.setPointerCapture(e.pointerId); }catch(_){}
+      at(e);
+    });
+    c.addEventListener('pointermove',function(e){ if(drag) at(e); });
+    function fim(e){ if(!drag) return; drag=false; c.classList.remove('drag'); if(e.pointerType!=='mouse') restart(); /* mouse: retoma no mouseleave */ }
+    c.addEventListener('pointerup',fim); c.addEventListener('pointercancel',fim);
+    /* o toque no comparador não chega ao swipe do carrossel */
+    c.addEventListener('touchstart',function(e){e.stopPropagation()},{passive:true});
+    c.addEventListener('touchend',function(e){e.stopPropagation()},{passive:true});
+    c.addEventListener('dragstart',function(e){e.preventDefault()});
+    k.addEventListener('keydown',function(e){
+      var p=parseFloat(c.style.getPropertyValue('--pos'))||50, m={ArrowLeft:-5,ArrowDown:-5,ArrowRight:5,ArrowUp:5}[e.key];
+      if(m) set(p+m); else if(e.key==='Home') set(0); else if(e.key==='End') set(100); else return;
+      e.preventDefault();
+    });
+    /* foco pelo Tab num slide escondido: mostra esse slide */
+    k.addEventListener('focus',function(){ var j=[].indexOf.call(tr.children,slide); if(j!==i) go(j); view.scrollLeft=0; });
+  });
   go(0); restart();
 })();
 
