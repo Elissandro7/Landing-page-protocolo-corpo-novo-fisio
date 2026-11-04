@@ -3,3 +3,4 @@ Thumbs.db
 *.png.tmp
 node_modules/
 capturas/
+dist/

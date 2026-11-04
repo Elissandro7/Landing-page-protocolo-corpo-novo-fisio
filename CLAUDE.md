@@ -10,6 +10,7 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 - `img/`: fotos do site, com caminho relativo.
 - `.htaccess`: cache, compressão e bloqueio de arquivos internos.
 - `robots.txt`: libera indexação.
+- `package.json` e `build.js`: só para o deploy Node.js da Hostinger; o build copia os arquivos públicos para `dist/`. Se criar um arquivo público novo na raiz, inclua-o na lista `PUBLICOS` do `build.js`.
 
 ## Oferta e pacotes
 

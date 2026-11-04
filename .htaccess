@@ -6,6 +6,7 @@ DirectoryIndex index.html
 # Bloqueia arquivos internos do projeto (git, agente, documentação)
 RedirectMatch 404 /\.(git|claude)(/|$)
 RedirectMatch 404 /(README|CLAUDE)\.md$
+RedirectMatch 404 /(package\.json|build\.js)$
 
 # Compressão
 <IfModule mod_deflate.c>
