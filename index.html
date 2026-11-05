@@ -77,7 +77,7 @@ h2{font-size:clamp(30px,4.6vw,46px);margin-bottom:16px}
 .hero .bens{animation:up .8s .4s both}.heroimg{animation:up 1s .4s both}
 @keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 .heroimg{aspect-ratio:4/5;border-radius:26px;background:linear-gradient(180deg,#2C5C74,#10293A);border:1px solid rgba(241,223,168,.35);box-shadow:0 30px 70px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#A3BCCB;font-size:15px;position:relative;overflow:hidden}
-.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .heroimg .tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.96);color:var(--ink);font-weight:700;font-size:14px;padding:9px 14px;border-radius:12px;text-align:left;line-height:1.3;border-left:4px solid var(--gold)}
 
 /* revelação ao rolar */
@@ -240,7 +240,7 @@ footer p{max-width:760px;margin:0 auto 10px}
   section{padding:64px 0}
   .hero{padding:52px 0 70px}
   .hero .grid,.auth .grid{grid-template-columns:1fr}
-  .heroimg{aspect-ratio:16/11}
+  .heroimg{aspect-ratio:1/1}
   .hero h1{font-size:33px}.hero p.sub{font-size:19px}
   .pgrid,.mgrid,.steps,.plans{grid-template-columns:1fr}
   .plan.gold{transform:none;order:-1}.plan.gold:hover{transform:none}
@@ -436,7 +436,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 <!--
   ===== COMO EDITAR =====
   1) Links de checkout: procure por  CHECKOUT_BRONZE e CHECKOUT_PRATA (o Ouro já está ligado à Cakto)  e troque pelas URLs reais.
-  2) Imagens: procure por  IMG_HERO  e  IMG_LEONARDO  e coloque a URL da foto dentro do src="" (veja os comentários).
+  2) Imagens: as fotos do Leonardo estão em img/leonardo-hero.webp (topo) e img/leonardo-perfil.webp (seção "Por que funciona").
   3) WhatsApp/contato e razão social: rodapé.
 -->
 
@@ -483,8 +483,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
       </div>
     </div>
     <div class="heroimg">
-      <!-- IMG_HERO: troque pela foto do Leonardo/treino. Ex.: <img src="https://SEU-SITE/hero.jpg" alt="Leonardo Feltrin"> -->
-      <span>Espaço para foto do Leonardo<br>(proporção 4:5)</span>
+      <img src="img/leonardo-hero.webp" width="880" height="1100" alt="Fisioterapeuta Leonardo Feltrin de jaleco, sorrindo, em sala de fisioterapia" fetchpriority="high">
       <div class="tag">Leonardo Feltrin<br>Fisioterapeuta</div>
     </div>
   </div>
@@ -517,8 +516,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 <section class="auth">
   <div class="wrap grid">
     <div class="authimg">
-      <!-- IMG_LEONARDO: <img src="https://SEU-SITE/leonardo.jpg" alt="Fisioterapeuta Leonardo Feltrin"> -->
-      <span>Foto do Leonardo<br>(quadrada)</span>
+      <img src="img/leonardo-perfil.webp" width="800" height="800" alt="Fisioterapeuta Leonardo Feltrin" loading="lazy">
     </div>
     <div>
       <h2>Por que funciona: <span class="tl2">um fisioterapeuta guiando você</span></h2>
