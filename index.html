@@ -346,6 +346,19 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 .totop{position:fixed;right:18px;bottom:22px;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:var(--gold-l);font-size:22px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:60}
 .totop.show{opacity:1;pointer-events:auto;transform:none}
 .sticky{transition:transform .35s}.sticky.hide{transform:translateY(110%)}
+/* whatsapp fixo */
+.wa{position:fixed;right:18px;bottom:22px;z-index:61;display:flex;align-items:center;gap:10px}
+.wa a.wab{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .2s}
+.wa a.wab:hover{transform:scale(1.08)}
+.wa a.wab svg{width:32px;height:32px;fill:#fff}
+.wbal{position:relative;background:var(--white);color:var(--ink);border-radius:14px;padding:10px 34px 10px 14px;font-size:14.5px;line-height:1.3;box-shadow:0 10px 30px rgba(10,28,41,.22);max-width:210px;opacity:0;transform:translateX(10px);pointer-events:none;transition:opacity .35s,transform .35s}
+.wbal b{display:block;font-family:var(--fh);font-size:15.5px}
+.wbal a{color:inherit;text-decoration:none}
+.wbal::after{content:"";position:absolute;right:-6px;top:50%;margin-top:-6px;border:6px solid transparent;border-right:0;border-left-color:var(--white)}
+.wbal.show{opacity:1;transform:none;pointer-events:auto}
+.wbal button{position:absolute;top:4px;right:6px;width:24px;height:24px;border:0;background:none;color:var(--mute);font-size:18px;line-height:1;cursor:pointer}
+.totop{right:auto;left:18px}
+
 .final .urg{display:inline-block;margin-bottom:22px;background:rgba(255,255,255,.08);border:1px solid rgba(241,223,168,.35);border-radius:99px;padding:6px 16px;font-size:15px;color:var(--gold-l)}
 .trustrow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:18px;font-size:14.5px;color:var(--mute)}
 .trustrow span::before{content:"🔒 "}
@@ -358,6 +371,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   .stat b{font-size:34px}
   .qbox{padding:26px 18px}.qstep h3{font-size:22px}
   .totop{bottom:84px}
+  .wa{right:14px;bottom:84px}.wa a.wab{width:54px;height:54px}
   /* nav: logo e botão em uma linha */
   .logo{white-space:nowrap;font-size:18px;gap:8px}.lt{line-height:1}.logo small{display:block;font-family:var(--fb);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:3px}.logo i{width:26px;height:26px}.logo i::after{inset:7px}
   .nav{gap:12px}
@@ -928,6 +942,11 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   </div>
 </footer>
 
+<!-- WhatsApp: número e mensagem pronta no href (wa.me/55DDDNUMERO?text=...) -->
+<div class="wa" id="wa">
+  <div class="wbal" id="wbal" role="status"><a href="https://wa.me/5554996160904?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Protocolo%20Corpo%20Novo%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20produto." target="_blank" rel="noopener" data-cta="whatsapp-balao"><b>Tem alguma dúvida?</b>Fale com a gente no WhatsApp.</a><button type="button" id="wbalx" aria-label="Fechar aviso">×</button></div>
+  <a class="wab" href="https://wa.me/5554996160904?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Protocolo%20Corpo%20Novo%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20produto." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" data-cta="whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+</div>
 <button type="button" class="totop" id="totop" aria-label="Voltar ao topo">↑</button>
 <div class="sticky" id="sticky"><a class="btn block" href="https://pay.cakto.com.br/4qeu6do_1283008" data-cta="sticky-ouro">Quero o Pacote Ouro · R$ 97,90</a></div>
 
@@ -1105,6 +1124,19 @@ var FIM_OFERTA = "2026-11-20T23:59:59-03:00";
 
   /* oferta encerrada: ajusta textos que citam o preço de lançamento */
   if(!$('#timer') || $('#timer').style.display==='none'){ var u=$('#urg'); if(u) u.style.display='none'; $$('.ofr').forEach(function(x){x.style.display='none'}); }
+})();
+
+/* WhatsApp: balão aparece após 8 s ou 35% de rolagem, some em 10 s ou no ×, e volta aos 5 min de página */
+(function(){
+  var b=document.getElementById('wbal'); if(!b) return;
+  var t, shown=false;
+  function show(fica){ b.classList.add('show'); clearTimeout(t); if(!fica) t=setTimeout(hide,10000); }
+  function hide(){ b.classList.remove('show'); }
+  function first(){ if(shown) return; shown=true; show(false); removeEventListener('scroll',onS); }
+  function onS(){ var h=document.documentElement; if(h.scrollTop>(h.scrollHeight-h.clientHeight)*.35) first(); }
+  setTimeout(first,8000); addEventListener('scroll',onS,{passive:true});
+  setTimeout(function(){ show(true); },300000);
+  document.getElementById('wbalx').onclick=function(){ clearTimeout(t); hide(); };
 })();
 </script>
 

@@ -21,6 +21,7 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 
 ## Dados da empresa
 
+- WhatsApp: +55 54 99616-0904, botão fixo (`#wa`) com mensagem pronta; balão "Tem alguma dúvida?" aparece após 8 s ou 35% de rolagem, some em 10 s e volta aos 5 min.
 - CNPJ 49.693.570/0001-01 (sem razão social na página). Contato: fisioterapiaepilatesvida@gmail.com.
 - Pagamento: Pix, cartão em até 12x, Apple Pay, Google Pay, PicPay, dois cartões ou cartão + Pix. Acesso imediato após a confirmação e vitalício.
 
