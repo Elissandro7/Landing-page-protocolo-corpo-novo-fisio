@@ -19,10 +19,14 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 - Prata R$ 67,99: tudo do Bronze + Método Barriga Negativa (LPF).
 - Ouro R$ 97,90 no lançamento (normal R$ 149,90): tudo do Prata + módulo Alívio de Dores + bônus Comunidade exclusiva. É o pacote que a página empurra.
 
+## Dados da empresa
+
+- CNPJ 49.693.570/0001-01 (sem razão social na página). Contato: fisioterapiaepilatesvida@gmail.com.
+- Pagamento: Pix, cartão em até 12x, Apple Pay, Google Pay, PicPay, dois cartões ou cartão + Pix. Acesso imediato após a confirmação.
+
 ## Pendências conhecidas
 
 - Links de checkout: `CHECKOUT_BRONZE`, `CHECKOUT_PRATA`. O Ouro já usa a Cakto: https://pay.cakto.com.br/4qeu6do_1283008 (12x de R$ 10,20 ou R$ 97,90 à vista).
 - Fotos: antes/depois. Os vídeos de depoimento (Cladis, Marcilene, Elias) já estão no site. As fotos do Leonardo já estão em `img/leonardo-hero.webp` e `img/leonardo-perfil.webp`.
-- FAQ: prazo de acesso e formas de pagamento (`[CONFIRMAR`).
-- Rodapé: razão social, CNPJ e e-mail.
+- FAQ: duração do acesso (vitalício? 12 meses?) ainda não informada; a pergunta foi retirada até confirmar.
 - Data de fim da oferta: `FIM_OFERTA` no script do final do `index.html`.
