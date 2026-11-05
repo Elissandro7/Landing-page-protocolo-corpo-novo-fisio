@@ -8,6 +8,7 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 
 - `index.html`: a página inteira (HTML, CSS e JS no mesmo arquivo).
 - `img/`: fotos do site, com caminho relativo.
+- `videos/`: depoimentos em MP4 (H.264 720x1280, ~5–10 MB cada); a capa de cada um fica em `img/capa-*.webp`.
 - `.htaccess`: cache, compressão e bloqueio de arquivos internos.
 - `robots.txt`: libera indexação.
 - `package.json` e `build.js`: só para o deploy Node.js da Hostinger; o build copia os arquivos públicos para `dist/`. Se criar um arquivo público novo na raiz, inclua-o na lista `PUBLICOS` do `build.js`.
@@ -21,7 +22,7 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 ## Pendências conhecidas
 
 - Links de checkout: `CHECKOUT_BRONZE`, `CHECKOUT_PRATA`. O Ouro já usa a Cakto: https://pay.cakto.com.br/4qeu6do_1283008 (12x de R$ 10,20 ou R$ 97,90 à vista).
-- Fotos: antes/depois e vídeos de depoimento. As fotos do Leonardo já estão em `img/leonardo-hero.webp` e `img/leonardo-perfil.webp`.
+- Fotos: antes/depois. Os vídeos de depoimento (Cladis, Marcilene, Elias) já estão no site. As fotos do Leonardo já estão em `img/leonardo-hero.webp` e `img/leonardo-perfil.webp`.
 - FAQ: prazo de acesso e formas de pagamento (`[CONFIRMAR`).
 - Rodapé: razão social, CNPJ e e-mail.
 - Data de fim da oferta: `FIM_OFERTA` no script do final do `index.html`.

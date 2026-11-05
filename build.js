@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OUT = path.join(__dirname, 'dist');
-const PUBLICOS = ['index.html', '.htaccess', 'robots.txt', 'img'];
+const PUBLICOS = ['index.html', '.htaccess', 'robots.txt', 'img', 'videos'];
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT);

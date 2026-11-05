@@ -627,23 +627,25 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 
     <div class="vgrid">
       <div class="vid">
-        <div class="vframe" data-video="">
-          <!-- <img src="URL_CAPA_OPCIONAL.jpg" alt=""> -->
-          <div><div class="play"></div><div class="ph">Vídeo depoimento 1<br>(formato vertical)</div></div>
+        <div class="vframe" data-video="videos/depoimento-cladis.mp4" role="button" tabindex="0" aria-label="Assistir ao depoimento de Cladis">
+          <img src="img/capa-cladis.webp" width="540" height="960" alt="" loading="lazy">
+          <div class="play"></div>
         </div>
-        <div class="vcap"><b>Nome do aluno(a)</b><span>"Frase de destaque do depoimento."</span></div>
+        <div class="vcap"><b>Cladis, 71 anos</b><span>"Tinha dificuldade até para andar."</span></div>
       </div>
       <div class="vid">
-        <div class="vframe" data-video="">
-          <div><div class="play"></div><div class="ph">Vídeo depoimento 2<br>(formato vertical)</div></div>
+        <div class="vframe" data-video="videos/depoimento-marcilene.mp4" role="button" tabindex="0" aria-label="Assistir ao depoimento de Marcilene">
+          <img src="img/capa-marcilene.webp" width="540" height="960" alt="" loading="lazy">
+          <div class="play"></div>
         </div>
-        <div class="vcap"><b>Nome do aluno(a)</b><span>"Frase de destaque do depoimento."</span></div>
+        <div class="vcap"><b>Marcilene, 55 anos</b><span>"Durante muito tempo sofria com dores na coluna."</span></div>
       </div>
       <div class="vid">
-        <div class="vframe" data-video="">
-          <div><div class="play"></div><div class="ph">Vídeo depoimento 3<br>(formato vertical)</div></div>
+        <div class="vframe" data-video="videos/depoimento-elias.mp4" role="button" tabindex="0" aria-label="Assistir ao depoimento de Elias">
+          <img src="img/capa-elias.webp" width="540" height="960" alt="" loading="lazy">
+          <div class="play"></div>
         </div>
-        <div class="vcap"><b>Nome do aluno(a)</b><span>"Frase de destaque do depoimento."</span></div>
+        <div class="vcap"><b>Elias, 33 anos</b><span>"Não conseguia ficar em pé por mais de 2 horas."</span></div>
       </div>
     </div>
 
@@ -955,10 +957,11 @@ var FIM_OFERTA = "2026-11-20T23:59:59-03:00";
 (function(){
   /* vídeos: clique no cartão para carregar o player */
   document.querySelectorAll('.vframe').forEach(function(f){
+    f.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); f.click(); } });
     f.addEventListener('click',function(){
       var u=f.getAttribute('data-video'); if(!u||f.classList.contains('on')) return;
       var el;
-      if(/\.(mp4|webm)(\?|$)/i.test(u)){ el=document.createElement('video'); el.src=u; el.controls=true; el.autoplay=true; el.playsInline=true; }
+      if(/\.(mp4|webm)(\?|$)/i.test(u)){ el=document.createElement('video'); el.src=u; el.controls=true; el.autoplay=true; el.playsInline=true; var im=f.querySelector('img'); if(im) el.poster=im.src; el.addEventListener('play',function(){ document.querySelectorAll('.vframe video').forEach(function(v){ if(v!==el) v.pause(); }); }); }
       else { el=document.createElement('iframe'); el.src=u+(u.indexOf('?')>-1?'&':'?')+'autoplay=1&rel=0'; el.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; el.allowFullscreen=true; el.title='Depoimento de aluno'; }
       f.classList.add('on'); f.appendChild(el);
     });
