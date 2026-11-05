@@ -260,6 +260,7 @@ body{overflow-wrap:break-word}
 .logo{font-family:var(--fh);font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none;color:#fff;display:flex;align-items:center;gap:10px}
 .logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-l));display:inline-block;position:relative}
 .logo i::after{content:"";position:absolute;inset:8px;border:3px solid var(--ink);border-radius:50%}
+.logo small{font-size:inherit;font-weight:inherit}
 .nav ul{list-style:none;display:flex;gap:26px;font-size:15.5px}
 .nav ul a{text-decoration:none;color:#C6D6E0;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav ul a:hover,.nav ul a.act{color:#fff;border-color:var(--gold)}
@@ -358,7 +359,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   .qbox{padding:26px 18px}.qstep h3{font-size:22px}
   .totop{bottom:84px}
   /* nav: logo e botão em uma linha */
-  .logo{white-space:nowrap;font-size:18px;gap:8px}.logo i{width:26px;height:26px}.logo i::after{inset:7px}
+  .logo{white-space:nowrap;font-size:18px;gap:8px}.lt{line-height:1}.logo small{display:block;font-family:var(--fb);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:3px}.logo i{width:26px;height:26px}.logo i::after{inset:7px}
   .nav{gap:12px}
   .nav .navcta{white-space:nowrap;font-size:14px;padding:0 14px;min-height:44px;display:inline-flex;align-items:center}
 }
@@ -457,7 +458,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 <header class="hero">
   <div class="wrap">
     <nav class="nav" aria-label="Principal">
-      <a class="logo" href="#"><i></i>Corpo Novo</a>
+      <a class="logo" href="#"><i></i><span class="lt"><small>Protocolo </small>Corpo Novo</span></a>
       <ul>
         <li><a href="#metodo">Método</a></li>
         <li><a href="#modulos">O que inclui</a></li>
@@ -546,7 +547,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
   <div class="wrap">
     <div class="center">
       <h2>3 pacotes. <span class="gt">Só o Ouro reúne tudo.</span></h2>
-      <p class="lead">Cada pacote inclui o anterior e soma um passo. <b>Só o Ouro cuida das suas dores.</b></p>
+      <p class="lead">Veja tudo o que vem em cada pacote. <b>Só o Ouro cuida das suas dores.</b></p>
     </div>
     <div class="mgrid tiers">
 
@@ -564,9 +565,9 @@ td.g.hl,th.g.hl{background:#F6E7B8}
       <div class="mod tier">
         <small>Pacote Prata</small>
         <h3>Treino + foco no abdômen</h3>
-        <p class="tfor">Bronze + método para firmar o abdômen.</p>
+        <p class="tfor">Treino completo + método para firmar o abdômen.</p>
         <ul class="tl">
-          <li class="inc"><b>Tudo do Pacote Bronze</b>Treino em 3 níveis</li>
+          <li class="inc"><b>Módulo Emagrecimento, Ganho de Massa e Alta Performance</b>Treinos em 3 níveis: iniciante, intermediário e avançado</li>
           <li class="new"><b>Método Barriga Negativa (LPF)</b>Abdômen mais firme e postura melhor, com técnica de fisioterapeuta</li>
         </ul>
         <a class="btn block ghost" href="#planos" data-cta="tier-prata">Ver o Prata</a>
@@ -576,9 +577,10 @@ td.g.hl,th.g.hl{background:#F6E7B8}
         <span class="ribbon">Recomendado · Completo</span>
         <small>Pacote Ouro</small>
         <h3>O protocolo completo</h3>
-        <p class="tfor">Prata + alívio de dores + comunidade.</p>
+        <p class="tfor">Treino, abdômen, alívio de dores e comunidade.</p>
         <ul class="tl">
-          <li class="inc"><b>Tudo do Pacote Prata</b>Treino em 3 níveis + Barriga Negativa</li>
+          <li class="inc"><b>Módulo Emagrecimento, Ganho de Massa e Alta Performance</b>Treinos em 3 níveis: iniciante, intermediário e avançado</li>
+          <li class="inc"><b>Método Barriga Negativa (LPF)</b>Abdômen mais firme e postura melhor, com técnica de fisioterapeuta</li>
           <li class="new"><b>Módulo Alívio de Dores em Casa</b>Coluna, quadril, joelho, tornozelo e mais: mova-se melhor e treine com confiança</li>
           <li class="new bns"><b>Bônus: Comunidade exclusiva</b>Tire dúvidas, troque experiências e não perca a motivação</li>
         </ul>
@@ -829,7 +831,9 @@ td.g.hl,th.g.hl{background:#F6E7B8}
         <div class="price"><small>R$</small>67,99</div>
         <p class="pay">pagamento único</p>
         <ul>
-          <li>Tudo do Pacote Bronze</li>
+          <li>Emagrecimento, Ganho de Massa e Alta Performance</li>
+          <li>Iniciante, intermediário e avançado</li>
+          <li>Videoaulas com o Leonardo</li>
           <li>Método Barriga Negativa (LPF)</li>
           <li class="no">Alívio de Dores</li>
           <li class="no">Comunidade</li>
@@ -847,9 +851,10 @@ td.g.hl,th.g.hl{background:#F6E7B8}
         <span class="save">Economize R$ 52,00</span>
         <p class="pay" style="margin-top:0">pagamento único</p>
         <ul>
-          <li><b>Tudo do Pacote Prata</b></li>
           <li>Emagrecimento, Ganho de Massa e Alta Performance</li>
-          <li>Barriga Negativa (LPF)</li>
+          <li>Iniciante, intermediário e avançado</li>
+          <li>Videoaulas com o Leonardo</li>
+          <li>Método Barriga Negativa (LPF)</li>
           <li><b>Alívio de Dores em casa</b></li>
           <li><b>Comunidade exclusiva</b></li>
         </ul>
