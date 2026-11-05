@@ -28,5 +28,5 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 ## Pendências conhecidas
 
 - Links de checkout: `CHECKOUT_BRONZE`, `CHECKOUT_PRATA`. O Ouro já usa a Cakto: https://pay.cakto.com.br/4qeu6do_1283008 (12x de R$ 10,20 ou R$ 97,90 à vista).
-- Fotos: antes/depois. Os vídeos de depoimento (Cladis, Marcilene, Elias) já estão no site. As fotos do Leonardo já estão em `img/leonardo-hero.webp` e `img/leonardo-perfil.webp`.
+- Antes/depois: 4 pares em `img/antes-N.webp` e `img/depois-N.webp`, sem nomes (52, 78, ? e 30 semanas; o par 3 está sem tempo informado). Os vídeos de depoimento (Cladis, Marcilene, Elias) já estão no site. As fotos do Leonardo já estão em `img/leonardo-hero.webp` e `img/leonardo-perfil.webp`.
 - Data de fim da oferta: `FIM_OFERTA` no script do final do `index.html`.
