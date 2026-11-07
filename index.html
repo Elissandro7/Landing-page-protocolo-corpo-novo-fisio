@@ -451,7 +451,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
 
 <!--
   ===== COMO EDITAR =====
-  1) Links de checkout: procure por  CHECKOUT_BRONZE e CHECKOUT_PRATA (o Ouro já está ligado à Cakto)  e troque pelas URLs reais.
+  1) Links de checkout: os três pacotes usam a Cakto (procure por pay.cakto.com.br).
   2) Imagens: as fotos do Leonardo estão em img/leonardo-hero.webp (topo) e img/leonardo-perfil.webp (seção "Por que funciona").
   3) CNPJ e e-mail de contato: rodapé.
 -->
@@ -818,7 +818,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
       <div class="plan bronze">
         <h3>Pacote Bronze</h3>
         <p class="for">Para começar com método.</p>
-        <div class="price"><small>R$</small>34,90</div>
+        <div class="price"><small>R$</small>37,99</div>
         <p class="pay">pagamento único</p>
         <ul>
           <li>Emagrecimento, Ganho de Massa e Alta Performance</li>
@@ -828,14 +828,14 @@ td.g.hl,th.g.hl{background:#F6E7B8}
           <li class="no">Alívio de Dores</li>
           <li class="no">Comunidade</li>
         </ul>
-        <a class="btn block ghost" href="CHECKOUT_BRONZE" data-cta="bronze">Quero o Bronze</a>
+        <a class="btn block ghost" href="https://pay.cakto.com.br/qizdgpz_1292828" data-cta="bronze">Quero o Bronze</a>
         <p class="nudge">Sem barriga e sem alívio de dores. <a href="#planos-ouro">Ver o Ouro</a></p>
       </div>
 
       <div class="plan">
         <h3>Pacote Prata</h3>
         <p class="for">Treino + foco no abdômen.</p>
-        <div class="price"><small>R$</small>67,99</div>
+        <div class="price"><small>R$</small>73,90</div>
         <p class="pay">pagamento único</p>
         <ul>
           <li>Emagrecimento, Ganho de Massa e Alta Performance</li>
@@ -845,8 +845,8 @@ td.g.hl,th.g.hl{background:#F6E7B8}
           <li class="no">Alívio de Dores</li>
           <li class="no">Comunidade</li>
         </ul>
-        <a class="btn block ghost" href="CHECKOUT_PRATA" data-cta="prata">Quero o Prata</a>
-        <p class="nudge">+R$ 29,91 e leve o Ouro. <a href="#planos-ouro">Ver o Ouro</a></p>
+        <a class="btn block ghost" href="https://pay.cakto.com.br/39aj2ok_1292829" data-cta="prata">Quero o Prata</a>
+        <p class="nudge">+R$ 24,00 e leve o Ouro. <a href="#planos-ouro">Ver o Ouro</a></p>
       </div>
 
       <div class="plan gold" id="planos-ouro">
@@ -880,7 +880,7 @@ td.g.hl,th.g.hl{background:#F6E7B8}
           <tr><td>Barriga Negativa (LPF)</td><td><span class="n">–</span></td><td><span class="y">✓</span></td><td class="g"><span class="y">✓</span></td></tr>
           <tr><td>Alívio de Dores</td><td><span class="n">–</span></td><td><span class="n">–</span></td><td class="g"><span class="y">✓</span></td></tr>
           <tr><td>Comunidade exclusiva</td><td><span class="n">–</span></td><td><span class="n">–</span></td><td class="g"><span class="y">✓</span></td></tr>
-          <tr><td><b>Investimento</b></td><td><b>R$ 34,90</b></td><td><b>R$ 67,99</b></td><td class="g"><b>R$ 97,90</b></td></tr>
+          <tr><td><b>Investimento</b></td><td><b>R$ 37,99</b></td><td><b>R$ 73,90</b></td><td class="g"><b>R$ 97,90</b></td></tr>
         </tbody>
       </table>
     </div>
@@ -1084,8 +1084,8 @@ var FIM_OFERTA = "2026-11-20T23:59:59-03:00";
 
   /* quiz */
   var PK={
-    bronze:{tag:'Ideal para começar',t:'Pacote Bronze',p:'R$ 34,90',h:$('[data-cta="bronze"]').getAttribute('href'),x:'Treinos em casa em 3 níveis, guiados pelo Leonardo.'},
-    prata:{tag:'Foco no abdômen',t:'Pacote Prata',p:'R$ 67,99',h:$('[data-cta="prata"]').getAttribute('href'),x:'Treino em 3 níveis + Método Barriga Negativa (LPF).'},
+    bronze:{tag:'Ideal para começar',t:'Pacote Bronze',p:'R$ 37,99',h:$('[data-cta="bronze"]').getAttribute('href'),x:'Treinos em casa em 3 níveis, guiados pelo Leonardo.'},
+    prata:{tag:'Foco no abdômen',t:'Pacote Prata',p:'R$ 73,90',h:$('[data-cta="prata"]').getAttribute('href'),x:'Treino em 3 níveis + Método Barriga Negativa (LPF).'},
     ouro:{tag:'Mais completo',t:'Pacote Ouro',p:'R$ 97,90',h:$('[data-cta="ouro"]').getAttribute('href'),x:'Treino, Barriga Negativa, Alívio de Dores e comunidade. Tudo em um.'}
   };
   var steps=$$('.qstep'), res=$('#qres'), bar=$('#qbar'), ans={};

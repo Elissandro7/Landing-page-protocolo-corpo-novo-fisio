@@ -15,8 +15,8 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 
 ## Oferta e pacotes
 
-- Bronze R$ 34,90: módulo Emagrecimento, Ganho de Massa e Alta Performance (iniciante, intermediário, avançado).
-- Prata R$ 67,99: tudo do Bronze + Método Barriga Negativa (LPF).
+- Bronze R$ 37,99 (checkout https://pay.cakto.com.br/qizdgpz_1292828): módulo Emagrecimento, Ganho de Massa e Alta Performance (iniciante, intermediário, avançado).
+- Prata R$ 73,90 (checkout https://pay.cakto.com.br/39aj2ok_1292829): tudo do Bronze + Método Barriga Negativa (LPF).
 - Ouro R$ 97,90 no lançamento (normal R$ 149,90): tudo do Prata + módulo Alívio de Dores + bônus Comunidade exclusiva. É o pacote que a página empurra.
 
 ## Dados da empresa
@@ -27,6 +27,6 @@ Para criar ou editar páginas, use o agente `criador-de-sites` (`.claude/agents/
 
 ## Pendências conhecidas
 
-- Links de checkout: `CHECKOUT_BRONZE`, `CHECKOUT_PRATA`. O Ouro já usa a Cakto: https://pay.cakto.com.br/4qeu6do_1283008 (12x de R$ 10,20 ou R$ 97,90 à vista).
+- Checkout do Ouro na Cakto: https://pay.cakto.com.br/4qeu6do_1283008 (12x de R$ 10,20 ou R$ 97,90 à vista).
 - Antes/depois: 4 pares em `img/antes-N.webp` e `img/depois-N.webp`, sem nomes (12, 52, 78 e 30 semanas). Os vídeos de depoimento (Cladis, Marcilene, Elias) já estão no site. As fotos do Leonardo já estão em `img/leonardo-hero.webp` e `img/leonardo-perfil.webp`.
 - Data de fim da oferta: `FIM_OFERTA` no script do final do `index.html`.
